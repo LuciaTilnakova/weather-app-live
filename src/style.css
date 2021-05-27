@@ -1,12 +1,15 @@
 body {
   background-color: #defbfc;
 }
-.wrapper {
-  background-color: white;
-  margin: 20px auto;
-  padding: 40px;
+.wrapper-app {
   max-width: 600px;
+  margin: 20px auto;
+}
+.wrapper-border {
+  background-color: white;
+  padding: 40px;
   border-radius: 5px;
+  box-shadow: 2px 2px 15px 2px #a8f2f5;
 }
 
 h1 {
@@ -28,4 +31,23 @@ li {
   color: #878787;
   margin-top: 0;
   padding: 0;
+}
+
+.right-side {
+  padding-left: 60px;
+}
+
+.temperature {
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.unit {
+  position: relative;
+  top: -23px;
+}
+
+a {
+  text-decoration: none;
 }
