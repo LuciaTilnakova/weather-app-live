@@ -1,0 +1,31 @@
+body {
+  background-color: #defbfc;
+}
+.wrapper {
+  background-color: white;
+  margin: 20px auto;
+  padding: 40px;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  line-height: 29px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  color: #272142;
+}
+
+ul {
+  margin-top: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: #878787;
+  margin-top: 0;
+  padding: 0;
+}
