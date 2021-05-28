@@ -2,12 +2,12 @@ let apiKey = "90d97642321171723050e9abe037b905";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
 
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
+  let currentDate = new Date(timestamp);
+  let hours = currentDate.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+  let minutes = currentDate.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -20,8 +20,24 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  let day = days[currentDate.getDay()];
+  let date = currentDate.getDate();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[currentDate.getMonth()];
+  return `${day} ${hours}:${minutes}, ${date} ${month}`;
 }
 
 function showTemperature(response) {
