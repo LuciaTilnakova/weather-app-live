@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Live Weather</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
@@ -17,10 +18,10 @@
     <div class="container">
       <div class="wrapper-app">
         <div class="wrapper-border">
-          <h1>London</h1>
+          <h1 id="city"></h1>
           <ul>
             <li>Thursday 15:30, 27 May</li>
-            <li>sunny</li>
+            <li id="conditions"></li>
           </ul>
           <div class="row">
             <div class="col-6">
@@ -30,15 +31,15 @@
                   alt="weather"
                 />
                 <div>
-                  <span class="temperature">20</span>
+                  <span id="temperature"></span>
                   <span class="unit"> °C | <a href="#"> °F</a></span>
                 </div>
               </div>
             </div>
             <div class="col-6 right-side">
               <ul>
-                <li>Humidity: 70%</li>
-                <li>Wind: 5km/h</li>
+                <li id="humidity"></li>
+                <li id="wind"></li>
               </ul>
             </div>
           </div>
