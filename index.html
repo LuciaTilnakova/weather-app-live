@@ -18,6 +18,17 @@
     <div class="container">
       <div class="wrapper-app">
         <div class="wrapper-border">
+        <form id="search-form" class="mb-4">
+            <div class="row">
+              <div class="col-9">
+                <input type="search" placeholder="Enter a city" class="form-control" id="city-input"/>
+              </div>
+              <div class="col-3">
+                <input type="submit" value="Search" class="btn btn-primary w-100" />
+              </div>
+            </div>
+        </form>
+      
           <h1 id="city"></h1>
           <ul>
             <li>Last updated: <span id="date"></span></li>
@@ -46,6 +57,7 @@
             >Open source</a
           >, by Lucia Tilnakova</small
         >
+      </div>
       </div>
     </div>
     <script src="src/script.js"></script>
