@@ -100,6 +100,31 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
+                  <span class="forecast-day">${day}</span>
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt="weather"
+                    width="50px"
+                  />
+                  <span class="forecast-max">18°</span>
+                  <span class="forecast-min">12°</span>
+                </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheit);
 
@@ -109,3 +134,4 @@ celsiusLink.addEventListener("click", showCelsius);
 let celsiusTemperature = null;
 
 search("London");
+displayForecast();
