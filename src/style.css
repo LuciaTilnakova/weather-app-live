@@ -52,16 +52,6 @@ a {
   text-decoration: none;
 }
 
-.active {
-  color: black;
-  cursor: default;
-}
-
-.active:hover {
-  text-decoration: none;
-  color: black;
-}
-
 .forecast {
   margin-top: 20px;
   text-align: center;
