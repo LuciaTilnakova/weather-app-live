@@ -109,26 +109,44 @@ function showCelsius(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+function formatForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
                 <div class="col-2">
-                  <span class="forecast-day">${day}</span>
+                  <span class="forecast-day">${formatForecast(
+                    forecastDay.dt
+                  )}</span>
                   <img
-                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     alt="weather"
                     width="50px"
                   />
-                  <span class="forecast-max">18°</span>
-                  <span class="forecast-min">12°</span>
+                  <span class="forecast-max">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span>
+                  <span class="forecast-min">${Math.round(
+                    forecastDay.temp.min
+                  )}°</span>
                 </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
